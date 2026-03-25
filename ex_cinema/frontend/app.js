@@ -23,7 +23,7 @@ async function loadMovies() {
       `;
 
       const btn = document.createElement("button");
-      btn.textContent = "✕";
+      btn.textContent = "X";
       btn.addEventListener("click", () => deleteMovie(m.id));
 
       li.append(info, btn);
@@ -32,7 +32,7 @@ async function loadMovies() {
 
     updateMovieSelects(data);
   } catch (err) {
-    movieList.innerHTML = "<li style='color:red'>❌ Ошибка загрузки. Запущен ли сервер?</li>";
+    movieList.innerHTML = "<li style='color:red'> Ошибка загрузки. Запущен ли сервер?</li>";
     console.error("loadMovies error:", err);
   }
 }
@@ -131,7 +131,7 @@ async function loadSessions() {
       sessionList.append(card);
     });
   } catch (err) {
-    sessionList.innerHTML = `<p style='color:red'>❌ Ошибка: ${err.message}</p>`;
+    sessionList.innerHTML = `<p style='color:red'> Ошибка: ${err.message}</p>`;
     console.error("loadSessions error:", err);
   }
 }
